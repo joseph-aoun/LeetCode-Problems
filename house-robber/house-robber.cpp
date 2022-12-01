@@ -4,14 +4,16 @@ public:
         
         if(nums.size() < 2) return nums[0];
         
-        vector<int>dp(nums.size());
-        dp[0] = nums[0];
-        dp[1] = max(nums[0], nums[1]);
+        int previous = nums[0];
+        int current = max(nums[0], nums[1]);
         
-        for (int i = 2; i < nums.size(); i++){
-            dp[i] = max(dp[i-1], dp[i-2] + nums[i]);
+        
+        for(int i = 2; i < nums.size(); i++){
+            int temp = previous;
+            previous = current;
+            current = max(temp + nums[i], current);
         }
         
-        return dp[nums.size()-1];
+        return current;
     }
 };
