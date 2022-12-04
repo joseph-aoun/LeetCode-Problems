@@ -13,6 +13,7 @@ public:
             else{
                 L[1] = x;
             }
+            if(L.size() > 2) return true;
         }
         return L.size() > 2;
     }
