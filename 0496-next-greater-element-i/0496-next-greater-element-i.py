@@ -8,8 +8,5 @@ class Solution:
                 d[stack.pop()] = nums2[i]
             stack.append(nums2[i])
             
-        ans = []
-        for x in nums1:
-            ans.append(d.get(x, -1))
-        return ans
+        return [d.get(x, -1) for x in nums1]
             
