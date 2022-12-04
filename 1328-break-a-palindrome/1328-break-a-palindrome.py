@@ -4,7 +4,6 @@ class Solution:
         palindrome = list(palindrome)
         
         for i in range(len(palindrome)//2):
-            if i >= len(palindrome)//2: break
             if palindrome[i] != "a":
                 palindrome[i] = "a"
                 return "".join(palindrome)
