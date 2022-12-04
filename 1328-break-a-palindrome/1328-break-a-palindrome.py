@@ -4,10 +4,10 @@ class Solution:
         palindrome = list(palindrome)
         
         for i, x in enumerate(palindrome):
-            if (temp:=palindrome[i]) != "a":
+            if i >= len(palindrome)//2: break
+            if palindrome[i] != "a":
                 palindrome[i] = "a"
-                if palindrome != palindrome[::-1]:
-                    return "".join(palindrome)
-                palindrome[i] = temp
+                return "".join(palindrome)
+            
         palindrome[-1] = "b"
         return "".join(palindrome)
