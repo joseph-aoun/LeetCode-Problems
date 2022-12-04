@@ -4,8 +4,6 @@ class Solution:
         L = sorted([c[x] for x in c.keys()], reverse = True)
         ans= 0
         
-        print(L)
-        
         for i in range(1, len(L)):
             if L[i] >= L[i-1]:
                 if L[i - 1] != 0:
