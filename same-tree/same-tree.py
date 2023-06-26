@@ -7,7 +7,5 @@
 class Solution:
     def isSameTree(self, p, q) -> bool:
         def ok(p, q):
-            if not p or not q:
-                return not (p or q)
-            return p.val == q.val and ok(p.left, q.left) and ok(p.right, q.right)
+            return not (p or q) if not p or not q else p.val == q.val and ok(p.left, q.left) and ok(p.right, q.right)
         return ok(p, q)
